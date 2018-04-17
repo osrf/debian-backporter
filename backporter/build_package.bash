@@ -2,7 +2,7 @@
 
 
 set -o errexit
-cd /tmp/backports
+cd /tmp/backports/opencv
 
 apt-get update
 mk-build-deps -ir -t "apt-get -qq --no-install-recommends"
@@ -14,7 +14,7 @@ echo "Done installing deps"
 
 # For straight build
 echo "Building package"
-gbp buildpackage -uc -us --git-ignore-new --git-ignore-branch
+gbp buildpackage -uc -us --git-upstream-tree=sid --git-debian-branch=sid
 echo "Done building package"
 mkdir -p output
 mv ../*.deb ../*.changes ../*.dsc output/
