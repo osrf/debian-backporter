@@ -1,4 +1,4 @@
-FROM ubuntu:artful
+FROM debian:stretch
 
 RUN apt-get update && apt-get install -y git-buildpackage equivs
 ENV DEBIAN_FRONTEND noninteractive
