@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOCKER_IMAGE=osrf/backporter
+DOCKER_IMAGE=osrf_debian_backporter
 
 set -o errexit
 docker build -t ${DOCKER_IMAGE} backporter
